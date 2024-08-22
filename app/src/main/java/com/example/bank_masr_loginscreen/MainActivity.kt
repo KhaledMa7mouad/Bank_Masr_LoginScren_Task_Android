@@ -1,6 +1,5 @@
 package com.example.bank_masr_loginscreen
 
-import android.graphics.drawable.Icon
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,10 +13,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -26,9 +23,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -38,6 +33,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -48,7 +44,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.constraintlayout.compose.Visibility
 import com.example.bank_masr_loginscreen.ui.theme.Bank_Masr_LoginScreenTheme
 
 
@@ -84,7 +79,7 @@ fun BankLoginScreen() {
                 modifier = Modifier.padding(top = 72.dp, start = 16.dp)
             )
             Text(
-                text = "العربيه",
+                text = stringResource(R.string.language),
                 modifier = Modifier
                     .padding(top = 88.dp, start = 240.dp)
                     .clickable {},
@@ -98,7 +93,7 @@ fun BankLoginScreen() {
         OutlinedTextField(
             value = text,
             onValueChange = { text = it },
-            label = { Text(text = "Username") },
+            label = { Text(text = stringResource(R.string.username)) },
             modifier = Modifier
                 .width(408.dp)
                 .padding(top = 32.dp, start = 36.dp),
@@ -113,7 +108,7 @@ fun BankLoginScreen() {
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
-            label = { Text(text = "Password") },
+            label = { Text(text = stringResource(R.string.password)) },
             modifier = Modifier
                 .width(408.dp)
                 .padding(top = 32.dp, start = 36.dp),
@@ -139,7 +134,7 @@ fun BankLoginScreen() {
 
         )
         Text(
-            text = "Forgot username/password?",
+            text = stringResource(R.string.forgot),
             modifier = Modifier
                 .padding(top = 28.dp, start = 36.dp)
                 .clickable {},
@@ -162,7 +157,7 @@ fun BankLoginScreen() {
 
             )
         ) {
-            Text(text = "Login", fontSize = 16.sp, fontWeight = FontWeight.Bold)
+            Text(text = stringResource(R.string.login), fontSize = 16.sp, fontWeight = FontWeight.Bold)
         }
 
         Row(
@@ -170,7 +165,7 @@ fun BankLoginScreen() {
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = "Need help?",
+                text = stringResource(R.string.need_help),
                 modifier = Modifier
                     .padding(top = 28.dp, start = 36.dp)
                     .clickable { },
@@ -182,7 +177,7 @@ fun BankLoginScreen() {
 
 
             Text(
-                text = "Contact us",
+                text = stringResource(R.string.contact),
                 modifier = Modifier
                     .padding(top = 28.dp)
                     .clickable {},
@@ -207,7 +202,7 @@ fun BankLoginScreen() {
             Column(Modifier.padding(start = 8.dp, top = 24.dp)) {
                 Image(painter = painterResource(R.drawable.our_products), contentDescription = "")
                 Text(
-                    text = "Our products",
+                    text = stringResource(R.string.products),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
@@ -223,7 +218,7 @@ fun BankLoginScreen() {
             Column(Modifier.padding(start = 8.dp, top = 24.dp)) {
                 Image(painter = painterResource(R.drawable.exchange_rate), contentDescription = "")
                 Text(
-                    text = "Exchange rate",
+                    text = stringResource(R.string.exchange),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
@@ -236,7 +231,7 @@ fun BankLoginScreen() {
             }
             Column(Modifier.padding(start = 8.dp, top = 24.dp)) {
                 Image(painter = painterResource(R.drawable.security_tips), contentDescription = "")
-                Text(text = "Security tips",
+                Text(text = stringResource(R.string.security),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
                     textAlign = TextAlign.Center,
@@ -252,7 +247,7 @@ fun BankLoginScreen() {
                     painter = painterResource(R.drawable.nearest_branch_or_atm),
                     contentDescription = ""
                 )
-                Text(text = "Nearest branch or ATM",
+                Text(text = stringResource(R.string.nearest),
                     fontSize = 16.sp,
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold,
@@ -270,9 +265,7 @@ fun BankLoginScreen() {
 
     }
 
-
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
