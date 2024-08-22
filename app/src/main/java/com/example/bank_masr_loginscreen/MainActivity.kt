@@ -70,6 +70,7 @@ fun BankLoginScreen() {
     var text by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
+    val isButtonEnabled = text.isNotEmpty() && password.isNotEmpty()
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -157,7 +158,8 @@ fun BankLoginScreen() {
                 .padding(top = 32.dp, start = 36.dp),
             shape = MaterialTheme.shapes.medium,
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(red = 189, green = 52, blue = 70, alpha = 255)
+                containerColor = if (isButtonEnabled) Color(red = 189, green = 52, blue = 70, alpha = 255) else Color.Gray,
+
             )
         ) {
             Text(text = "Login", fontSize = 16.sp, fontWeight = FontWeight.Bold)
@@ -208,6 +210,7 @@ fun BankLoginScreen() {
                     text = "Our products",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
                     color = Color.Red,
                     modifier = Modifier.clickable {},
                     maxLines = 1,
@@ -223,6 +226,7 @@ fun BankLoginScreen() {
                     text = "Exchange rate",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
                     color = Color.Red,
                     modifier = Modifier.clickable {},
                     maxLines = 1,
@@ -235,6 +239,7 @@ fun BankLoginScreen() {
                 Text(text = "Security tips",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
                     color = Color.Red,
                     modifier = Modifier.clickable {},
                     maxLines = 1,
@@ -249,10 +254,13 @@ fun BankLoginScreen() {
                 )
                 Text(text = "Nearest branch or ATM",
                     fontSize = 16.sp,
+                    textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold,
                     color = Color.Red,
-                    modifier = Modifier.clickable {},
+                    modifier = Modifier
+                        .clickable {},
                     overflow = TextOverflow.Visible
+
                 )
 
             }
